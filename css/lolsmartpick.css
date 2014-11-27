@@ -1,0 +1,42 @@
+body, html {
+	padding : 0;
+	margin : 0;
+}
+
+#content{
+	height : 100vh;
+	width : 100vw;
+	background-color:#EEEEEE;
+}
+
+.team-panel {
+	display : inline-block;
+	height : 100vh;
+	width : 35vw;
+}
+
+.mid-content {
+	display : inline-block;
+	height : 100vh;
+	width : 30vw;
+}
+
+.card {
+	box-shadow : 0 2px 4px rgba(0,0,0,0.1);
+	border-radius : 2px;
+	height : 16.4%;
+	width : 94%;
+	margin-top : 3%;
+	background-color: #FAFAFA;
+}
+
+.panel-content {
+	padding-right : 3%;
+	padding-left : 3%;
+	height : 100%;
+	width : 94%;
+}
+
+h1 {
+	color : red;
+}

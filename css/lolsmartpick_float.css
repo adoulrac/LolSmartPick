@@ -1,0 +1,124 @@
+/************
+*	Common
+************/
+
+body, html {
+	padding : 0;
+	margin : 0;
+	height : 100%;
+	width : 100%;
+}
+
+tr, td, table {
+	padding : 0px;
+	margin : 0px;
+}
+
+#content{
+	height : 100%;
+	width : 100%;
+	background-color:#EEEEEE;
+}
+
+#teams {
+	border : none;
+	height : 100%;
+	width : 100%;
+}
+
+.team-panel {
+	height : 100%;
+	width : 40%;
+}
+
+.card {
+	position : relative;
+	box-shadow : 0 4px 8px rgba(0,0,0,0.4);
+	border-radius : 4px;
+	height : 18%;
+	width : 94%;
+	margin-top : 5%;
+	margin-bottom: 5%;
+	margin-left : auto;
+	margin-right: auto;
+	background-color: #FAFAFA;
+	overflow : hidden;
+}
+
+.card .img-content {
+	height : 100%;
+	width : 80%;
+	overflow: hidden;
+}
+
+.card .lane-content .lane-icon {
+	width : 80%;
+	margin : auto;
+	margin-top : 30%;
+}
+
+.card .lane-content .lane-icon img{
+	max-height : 4vh;
+}
+
+.card .lane-content .lane-name p{
+	margin-top : 0.3em;
+	font-size: 2vh;
+	line-height: 1em;
+}
+
+.card .lane-content {
+	width : 20%;
+	height : 100%;
+	background-color : #FF5722;
+	color : #FAFAFA;
+	text-align: center;
+	vertical-align: center;
+	line-height:100%;
+}
+
+.card .lane-content span {
+	vertical-align: center;
+}
+
+.card .img-content img {
+	display: block;
+	margin : auto;
+	height : 100%;
+	width : 100%; 
+}
+
+
+/************
+*	Ally
+************/
+
+#ally-panel {
+	float: left;
+}
+
+#ally-panel .card .img-content {
+	float : left;
+}
+
+#ally-panel .card .lane-content {
+	float : right;
+}
+
+/************
+*	Ennemy
+************/
+
+#enemy-panel {
+	float : right;
+}
+
+#enemy-panel .card .img-content {
+	float : right;
+}
+
+#enemy-panel .card .lane-content {
+	float : left;
+}
+
+
