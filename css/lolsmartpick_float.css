@@ -14,7 +14,7 @@ tr, td, table {
 	margin : 0px;
 }
 
-#content{
+.content{
 	height : 100%;
 	width : 100%;
 	background-color:#EEEEEE;

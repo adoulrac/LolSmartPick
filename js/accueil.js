@@ -1,5 +1,20 @@
-angular.module('lolsmartpick', ['ngTouch', 'ngSanitize'])
-.controller('accueilController', ['$scope', '$sce', function($scope, $sce) {
+angular.module('lolsmartpick', ['ngTouch', 'ngSanitize', 'ngRoute'])
+.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/pick', {
+        templateUrl: 'views/pickChamps.html',
+        controller: 'accueilController'
+      }).
+      when('/champs', {
+        templateUrl: 'views/listChamp.html',
+        controller: 'listChampController'
+      }).
+      otherwise({
+        redirectTo: '/pick'
+      });
+  }])
+.controller('accueilController', ['$scope', '$sce', '$location', function($scope, $sce, $location) {
 	var DEFAULT_POSTE = "N<br/>O<br/>N<br/>E";
 	$scope.alliesPoste = [
 		{"name" : "T<br/>O<br/>P"},
@@ -47,4 +62,8 @@ angular.module('lolsmartpick', ['ngTouch', 'ngSanitize'])
 			listPoste.push({"name" : DEFAULT_POSTE});
 		}
 	};
+
+	$scope.selectChamp = function(ally){
+		$location.path("/champs");
+	}
 }]); 

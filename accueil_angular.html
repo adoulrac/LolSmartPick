@@ -6,40 +6,17 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
     <link href="css/lolsmartpick_float.css" rel="stylesheet">
+    <link href="css/listChamp.css" rel="stylesheet">
+    <link href="css/switch_on.css" rel="stylesheet">
   </head>
-  <body ng-controller="accueilController">
-    <div id="content">   
-        <div class="team-panel" id="ally-panel">
-            <div class="card" ng-repeat="ally in allies">
-                <div class="img-content">
-                    <img ng-src="{{ally.img}}"/>
-                </div>
-                <div class="lane-content" ng-click="changePoste(alliesPoste,ally)">
-                    <div class="lane-icon">
-                        <img src="img/right.svg">
-                    </div>
-                    <div class="lane-name" ng-bind-html="trulyTrustHTML(ally.poste)"></div>
-                </div>
-            </div>
-        </div>
+  <body>
 
-        <div class="team-panel" id="enemy-panel">
-            <div class="card" ng-repeat="ennemy in ennemies">
-                <div class="img-content">
-                    <img src="{{ennemy.img}}" alt="{{ennemy.hero}}"/>
-                </div>
-                <div class="lane-content" ng-click="changePoste(ennemiesPoste,ennemy)">
-                    <div class="lane-icon">
-                        <img src="img/left.svg">
-                    </div>
-                    <div class="lane-name" ng-bind-html="trulyTrustHTML(ennemy.poste)"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="content" ng-view></div>
+
     <script src="js/angular.min.js"></script>
     <script src="js/angular-touch.min.js"></script>
     <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
     <script src="js/accueil.js"></script>
     <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
     <script src="cordova.js"></script>
