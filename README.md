@@ -42,3 +42,14 @@ New -> Project -> Other -> Android project from existing sources
 Pour build une appli iOS
 je sais pascl
 
+========
+
+Ionic: http://ionicframework.com/getting-started/
+
+ionic start LSP blank
+cd LSP
+cordova platform add ios/android
+ionic build ios/android
+ionic emulate ios/android
+
+http://ionicframework.com/docs/guide/installation.html
