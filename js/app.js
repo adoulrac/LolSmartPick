@@ -55,15 +55,25 @@ angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'])
 })
 
 .controller('allChampsController', function($scope, $location) {
-	$scope.toogleView = function(){
-		$location.path("/assistance");
-	}
+
+	$scope.backToPick = function() {
+    	$location.path("/pick");
+    }
+
+    $scope.toogleView = function() {
+    	$location.path("/assistance");
+    }
 })
 
 .controller('assistanceController', function($scope, $location) {
-	$scope.toogleView = function(){
-		$location.path("/allChamps");
-	}
+
+	$scope.backToPick = function() {
+    	$location.path("/pick");
+    }
+
+    $scope.toogleView = function() {
+    	$location.path("/allChamps");
+    }
 })
 
 .controller('resultController', function($scope, $location) {

@@ -2,12 +2,12 @@
 
 	<div class="padding-top-2">
 	<div class="back">
-		<a class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+		<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backToPick()">Back</a>
 	</div>
 	<div class="assistance-button">
 	Pick Assistance
 	<label class="toggle">
-   		<input type="checkbox" ng-change="toogleView()">
+   		<input type="checkbox" ng-checked="true" ng-model="toogle" ng-change="toogleView()" toggle-class="toggle-calm"/>
    		<div class="track">
      		<div class="handle"></div>
    		</div>
