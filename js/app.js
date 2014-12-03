@@ -20,6 +20,11 @@ angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'])
     templateUrl: 'templates/welcome.html',
     controller: 'welcomeController'
   });
+  
+  $routeProvider.when('/assistance', {
+    templateUrl: 'templates/assistance.html',
+    controller: 'assistanceController'
+  });
 
   $routeProvider.when('/pick', {
     templateUrl: 'templates/pickChamps.html',
@@ -45,6 +50,10 @@ angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'])
 })
 
 .controller('listChampController', function($scope, $location) {
+	//todo
+})
+
+.controller('assistanceController', function($scope, $location) {
 	//todo
 })
 
@@ -100,4 +109,9 @@ angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'])
 	$scope.selectChamp = function(ally){
 		$location.path("/champs");
 	}
+	
+	$scope.startGame = function(){
+		$location.path("/assistance");
+	}
+
 });
