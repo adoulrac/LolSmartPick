@@ -14,6 +14,10 @@ tr, td, table {
 	margin : 0px;
 }
 
+.padding-bottom-text{
+	padding-bottom:1%;
+}
+
 .content{
 	height : 100%;
 	width : 100%;
@@ -27,6 +31,15 @@ tr, td, table {
 
 .startGame{
 	margin-left:35%;
+}
+
+.home{
+	margin-left:40%;
+}
+
+.back{
+	float:left;
+	margin-left:2%;
 }
 
 .assistance-button{
@@ -85,7 +98,7 @@ tr, td, table {
 .card .lane-content {
 	width : 20%;
 	height : 100%;
-	background-color : #FF5722;
+	background-color : #606060;
 	color : #FAFAFA;
 	text-align: center;
 	vertical-align: center;
