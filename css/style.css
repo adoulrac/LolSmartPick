@@ -29,6 +29,14 @@ tr, td, table {
 	padding-top:90%;
 }
 
+.margin-top-15{
+	margin-top:15%;
+}
+
+.padding-top-2{
+	padding-top:5%;
+}
+
 .startGame{
 	margin-left:35%;
 }

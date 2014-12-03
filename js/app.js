@@ -31,9 +31,14 @@ angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'])
     controller: 'pickController'
   });
   
-  $routeProvider.when('/champs', {
-    templateUrl: 'templates/listChamp.html',
-    controller: 'listChampController'
+  $routeProvider.when('/assistance', {
+    templateUrl: 'templates/assistance.html',
+    controller: 'assistanceController'
+  });
+  
+  $routeProvider.when('/allChamps', {
+    templateUrl: 'templates/allChamps.html',
+    controller: 'allChampsController'
   });
 
   // if none of the above routes are met, use this fallback
@@ -49,15 +54,23 @@ angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'])
 	}
 })
 
-.controller('listChampController', function($scope, $location) {
-	//todo
+.controller('allChampsController', function($scope, $location) {
+	$scope.toogleView = function(){
+		$location.path("/assistance");
+	}
+})
+
+.controller('assistanceController', function($scope, $location) {
+	$scope.toogleView = function(){
+		$location.path("/allChamps");
+	}
 })
 
 .controller('resultController', function($scope, $location) {
 	//todo
 })
 
-.controller('pickController', function($scope, $location) {
+.controller('pickController', function($scope, $location, $sce) {
 	var DEFAULT_POSTE = "N<br/>O<br/>N<br/>E";
 	$scope.alliesPoste = [
 		{"name" : "T<br/>O<br/>P"},
@@ -107,7 +120,7 @@ angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'])
 	};
 
 	$scope.selectChamp = function(ally){
-		$location.path("/champs");
+		$location.path("/allChamps");
 	}
 	
 	$scope.startGame = function(){
