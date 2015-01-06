@@ -31,7 +31,7 @@ var lolsmartpick = angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'
     controller: 'pickController'
   });
   
-  $routeProvider.when('/assistance', {
+  $routeProvider.when('/assistance/:id', {
     templateUrl: 'templates/assistance.html',
     controller: 'assistanceController'
   });
