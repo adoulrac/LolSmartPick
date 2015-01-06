@@ -1,0 +1,90 @@
+lolsmartpick.controller('welcomeController', function($scope, $location) {
+	$scope.goToPickAssistance = function(){
+		$location.path("/pick");
+	}
+})
+
+.controller('allChampsController', function($scope, $location) {
+
+	$scope.backToPick = function() {
+    	$location.path("/pick");
+    }
+
+    $scope.toogleView = function() {
+    	$location.path("/assistance");
+    }
+})
+
+.controller('assistanceController', function($scope, $location) {
+
+	$scope.backToPick = function() {
+    	$location.path("/pick");
+    }
+
+    $scope.toogleView = function() {
+    	$location.path("/allChamps");
+    }
+})
+
+.controller('resultController', function($scope, $location) {
+	//todo
+})
+
+.controller('pickController', function($scope, $location, $sce) {
+	var DEFAULT_POSTE = "N<br/>O<br/>N<br/>E";
+	$scope.alliesPoste = [
+		{"name" : "T<br/>O<br/>P"},
+		{"name" : "S<br/>U<br/>P"},
+		{"name" : "A<br/>D<br/>C"},
+		{"name" : "M<br/>I<br/>D"},
+		{"name" : "J<br/>U<br/>N"}
+	];
+
+	$scope.ennemiesPoste = [
+		{"name" : "T<br/>O<br/>P"},
+		{"name" : "S<br/>U<br/>P"},
+		{"name" : "A<br/>D<br/>C"},
+		{"name" : "M<br/>I<br/>D"},
+		{"name" : "J<br/>U<br/>N"}
+	];
+
+	$scope.allies = [
+		{"hero" : "Aatrox", "img" : "img/icons/AatroxSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Ahri", "img" : "img/icons/AhriSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Akali", "img" : "img/icons/AkaliSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Alistar", "img" : "img/icons/AlistarSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Amumu", "img" : "img/icons/AmumuSquare.png", "poste" : DEFAULT_POSTE},
+	];
+
+	$scope.ennemies = [
+		{"hero" : "Anivia", "img" : "img/icons/AniviaSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Annie", "img" : "img/icons/AnnieSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Ashe", "img" : "img/icons/AsheSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Azir", "img" : "img/icons/AzirSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Amumu", "img" : "img/icons/AmumuSquare.png", "poste" : DEFAULT_POSTE},
+	];
+
+	$scope.trulyTrustHTML = function(html){
+		return $sce.trustAsHtml(html);
+	};
+
+	$scope.changePoste = function(listPoste, ally) {
+		if(ally.poste != DEFAULT_POSTE){
+			listPoste.push({"name" : ally.poste});
+		}
+		ally.poste = listPoste[0].name
+		listPoste.splice(0,1);
+		if(listPoste.length <= 0){
+			listPoste.push({"name" : DEFAULT_POSTE});
+		}
+	};
+
+	$scope.selectChamp = function(ally){
+		$location.path("/allChamps");
+	}
+	
+	$scope.startGame = function(){
+		$location.path("/result");
+	}
+
+});
