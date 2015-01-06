@@ -1,3 +1,4 @@
+<ion-content>
 <div class="content" ng-controller="allChampsController">
 	<div class="padding-top-2">
 		<div class="back">
@@ -14,45 +15,17 @@
 		</div>
 	</div>
 	<br/><br/><br/>
-	<div class="card champCard">
-		<div class="item item-body champBody">
-			<img class="full-image" src="img/icons/AniviaSquare.png">
-			<p>Anivia</p>
-	  	</div>
+	<div class="list list-inset">
+	  	<label class="item item-input">
+	    	<i class="icon ion-search placeholder-icon"></i>
+	    	<input type="text" placeholder="Search" ng-model="query">
+	  	</label>
 	</div>
-
-	<div class="card champCard">
+	<div class="card champCard" ng-repeat="champ in champs | filter:{name:query, use:false}" ng-click="selectChamp(champ)">
 		<div class="item item-body champBody">
-			<img class="full-image" src="img/icons/AnnieSquare.png">
-			<p>Annie</p>	  	
-		</div>
-	</div>
-
-	<div class="card champCard">
-		<div class="item item-body champBody">
-			<img class="full-image" src="img/icons/AsheSquare.png">
-			<p>Ashe</p>
-	  	</div>
-	</div>
-
-	<div class="card champCard">
-		<div class="item item-body champBody">
-			<img class="full-image" src="img/icons/AsheSquare.png">
-			<p>Ashe</p>
-	  	</div>
-	</div>
-
-	<div class="card champCard">
-		<div class="item item-body champBody">
-			<img class="full-image" src="img/icons/AsheSquare.png">
-			<p>Ashe</p>
-	  	</div>
-	</div>
-
-	<div class="card champCard">
-		<div class="item item-body champBody">
-			<img class="full-image" src="img/icons/AsheSquare.png">
-			<p>Ashe</p>
+			<img class="full-image" src="img/icons/{{champ.image}}">
+			<p>{{champ.name}}</p>
 	  	</div>
 	</div>
 </div>
+</ion-content>

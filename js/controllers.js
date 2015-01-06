@@ -4,7 +4,14 @@ lolsmartpick.controller('welcomeController', function($scope, $location) {
 	}
 })
 
-.controller('allChampsController', function($scope, $location) {
+.controller('allChampsController', function($scope, $location, $routeParams, allChampService) {
+
+	$scope.champs = list_champ;
+
+	$scope.selectChamp = function(champ) {
+		allChampService.selectChamp(champ, $routeParams.id);
+		$location.path("/pick");
+	}
 
 	$scope.backToPick = function() {
     	$location.path("/pick");
@@ -16,6 +23,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location) {
 })
 
 .controller('assistanceController', function($scope, $location) {
+	$scope.champs = allChampService.getChamps();
 
 	$scope.backToPick = function() {
     	$location.path("/pick");
@@ -41,6 +49,8 @@ lolsmartpick.controller('welcomeController', function($scope, $location) {
 
 	$scope.ennemies = posteService.getEnnemies();
 
+	console.log($scope.allies);
+
 	$scope.trulyTrustHTML = function(html){
 		return $sce.trustAsHtml(html);
 	};
@@ -53,8 +63,8 @@ lolsmartpick.controller('welcomeController', function($scope, $location) {
 		posteService.changePosteEnnemy(OldPost);
 	}
 
-	$scope.selectChamp = function(ally){
-		$location.path("/allChamps");
+	$scope.selectChamp = function(index){
+		$location.path("/allChamps/" + index);
 	}
 	
 	$scope.startGame = function(){

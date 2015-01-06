@@ -32,24 +32,36 @@ lolsmartpick.service('posteService', function() {
 		{"hero" : "Azir", "img" : "img/icons/AzirSquare.png", "poste" : DEFAULT_POSTE},
 		{"hero" : "Amumu", "img" : "img/icons/AmumuSquare.png", "poste" : DEFAULT_POSTE},
 	];
-	
-	this.getAllies = function() {
+
+	return {
+	getAllies : function() {
 		return allies;
-	}
+	},
 
-	this.getEnnemies = function() {
+	getEnnemies : function() {
 		return ennemies;
-	}
+	},
 
-	this.getAlliesPoste = function() {
+	getAlliesPoste : function() {
 		return alliesPoste;
-	}
+	},
 
-	this.getEnnemiesPoste = function() {
+	getEnnemiesPoste : function() {
 		return ennemiesPoste;
-	}
+	},
 
-	this.changePosteAlly = function(Oldposte) {
+	changeAlly : function(index, champ){
+		console.log(champ.name + " added at the index " + index);
+		allies[index].hero = champ.name;
+		allies[index].img = champ.image;
+	},
+
+	changeEnnemy : function(index, champ){
+		ennemies[index].hero = champ.name;
+		ennemies[index].img = champ.image;
+	},
+
+	changePosteAlly : function(Oldposte) {
 		if(Oldposte.poste != DEFAULT_POSTE){
 			alliesPoste.push({"name" : Oldposte.poste});
 		}
@@ -58,9 +70,9 @@ lolsmartpick.service('posteService', function() {
 		if(alliesPoste.length <= 0){
 			alliesPoste.push({"name" : DEFAULT_POSTE});
 		}
-	};
+	},
 
-	this.changePosteEnnemy = function(Oldposte) {
+	changePosteEnnemy : function(Oldposte) {
 		if(Oldposte.poste != DEFAULT_POSTE){
 			ennemiesPoste.push({"name" : Oldposte.poste});
 		}
@@ -69,5 +81,29 @@ lolsmartpick.service('posteService', function() {
 		if(ennemiesPoste.length <= 0){
 			ennemiesPoste.push({"name" : DEFAULT_POSTE});
 		}
-	};
+	}};
+});
+
+lolsmartpick.service('allChampService', function(posteService, $filter) {
+	var champs = list_champ;
+
+	this.getChamps = function(){
+		return champs;
+	}
+
+	this.selectChamp = function(champ, index){
+		if(index < 5){
+			console.log(champ.name + " selectionné à l'index " + index);
+			posteService.changeAlly(index, champ);
+		}else if(index >=5){
+			console.log(champ.name + " selectionné à l'index " + index);
+			posteService.changeEnnemy(index-5, champ);
+		}
+		for(tempChamp in champs){
+			if(tempChamp.name == champ.name){
+				tempChamp.use = true;
+				break;
+			}
+		}
+	}
 });
