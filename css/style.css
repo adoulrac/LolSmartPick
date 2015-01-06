@@ -67,7 +67,7 @@ tr, td, table {
 	width : 40%;
 }
 
-.card {
+.cards {
 	position : relative;
 	box-shadow : 0 4px 8px rgba(0,0,0,0.4);
 	border-radius : 4px;
@@ -81,29 +81,29 @@ tr, td, table {
 	overflow : hidden;
 }
 
-.card .img-content {
+.cards .img-content {
 	height : 100%;
 	width : 80%;
 	overflow: hidden;
 }
 
-.card .lane-content .lane-icon {
+.cards .lane-content .lane-icon {
 	width : 80%;
 	margin : auto;
 	margin-top : 30%;
 }
 
-.card .lane-content .lane-icon img{
+.cards .lane-content .lane-icon img{
 	max-height : 4vh;
 }
 
-.card .lane-content .lane-name p{
+.cards .lane-content .lane-name p{
 	margin-top : 0.3em;
 	font-size: 2vh;
 	line-height: 1em;
 }
 
-.card .lane-content {
+.cards .lane-content {
 	width : 20%;
 	height : 100%;
 	background-color : #606060;
@@ -113,11 +113,11 @@ tr, td, table {
 	line-height:100%;
 }
 
-.card .lane-content span {
+.cards .lane-content span {
 	vertical-align: center;
 }
 
-.card .img-content img {
+.cards .img-content img {
 	display: block;
 	margin : auto;
 	height : 100%;
@@ -133,11 +133,11 @@ tr, td, table {
 	float: left;
 }
 
-#ally-panel .card .img-content {
+#ally-panel .cards .img-content {
 	float : left;
 }
 
-#ally-panel .card .lane-content {
+#ally-panel .cards .lane-content {
 	float : right;
 }
 
@@ -149,12 +149,25 @@ tr, td, table {
 	float : right;
 }
 
-#enemy-panel .card .img-content {
+#enemy-panel .cards .img-content {
 	float : right;
 }
 
-#enemy-panel .card .lane-content {
+#enemy-panel .cards .lane-content {
 	float : left;
 }
 
+.champCard {
+	width : 25% !important;
+	display : inline-block;
+	margin : 5px 10px;
+}
 
+.champBody {
+	padding : 0px;
+}
+
+.champBody p{
+	margin-top : 0px;
+	text-align : center;
+}

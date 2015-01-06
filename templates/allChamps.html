@@ -1,16 +1,58 @@
 <div class="content" ng-controller="allChampsController">
 	<div class="padding-top-2">
-	<div class="back">
-		<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backToPick()">Back</a>
+		<div class="back">
+			<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backToPick()">Back</a>
+		</div>
+		<div class="assistance-button">
+			Pick Assistance
+			<label class="toggle">
+		   		<input type="checkbox" ng-model="toogle" ng-change="toogleView()" toggle-class="toggle-calm">
+		   		<div class="track">
+		     		<div class="handle"></div>
+		   		</div>
+			</label>
+		</div>
 	</div>
-	<div class="assistance-button">
-	Pick Assistance
-	<label class="toggle">
-   		<input type="checkbox" ng-model="toogle" ng-change="toogleView()" toggle-class="toggle-calm">
-   		<div class="track">
-     		<div class="handle"></div>
-   		</div>
-	</label>
+	<br/><br/><br/>
+	<div class="card champCard">
+		<div class="item item-body champBody">
+			<img class="full-image" src="img/icons/AniviaSquare.png">
+			<p>Anivia</p>
+	  	</div>
 	</div>
+
+	<div class="card champCard">
+		<div class="item item-body champBody">
+			<img class="full-image" src="img/icons/AnnieSquare.png">
+			<p>Annie</p>	  	
+		</div>
+	</div>
+
+	<div class="card champCard">
+		<div class="item item-body champBody">
+			<img class="full-image" src="img/icons/AsheSquare.png">
+			<p>Ashe</p>
+	  	</div>
+	</div>
+
+	<div class="card champCard">
+		<div class="item item-body champBody">
+			<img class="full-image" src="img/icons/AsheSquare.png">
+			<p>Ashe</p>
+	  	</div>
+	</div>
+
+	<div class="card champCard">
+		<div class="item item-body champBody">
+			<img class="full-image" src="img/icons/AsheSquare.png">
+			<p>Ashe</p>
+	  	</div>
+	</div>
+
+	<div class="card champCard">
+		<div class="item item-body champBody">
+			<img class="full-image" src="img/icons/AsheSquare.png">
+			<p>Ashe</p>
+	  	</div>
 	</div>
 </div>
