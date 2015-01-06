@@ -18,19 +18,19 @@ lolsmartpick.service('posteService', function() {
 	];
 
 	var allies = [
-		{"hero" : "Aatrox", "img" : "img/icons/AatroxSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Ahri", "img" : "img/icons/AhriSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Akali", "img" : "img/icons/AkaliSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Alistar", "img" : "img/icons/AlistarSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Amumu", "img" : "img/icons/AmumuSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
 	];
 
 	var ennemies = [
-		{"hero" : "Anivia", "img" : "img/icons/AniviaSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Annie", "img" : "img/icons/AnnieSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Ashe", "img" : "img/icons/AsheSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Azir", "img" : "img/icons/AzirSquare.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Amumu", "img" : "img/icons/AmumuSquare.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
 	];
 
 	return {

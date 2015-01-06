@@ -18,11 +18,11 @@ lolsmartpick.controller('welcomeController', function($scope, $location) {
     }
 
     $scope.toogleView = function() {
-    	$location.path("/assistance");
+    	$location.path("/assistance/" +  $routeParams.id);
     }
 })
 
-.controller('assistanceController', function($scope, $location) {
+.controller('assistanceController', function($scope, $location, $routeParams, allChampService) {
 	$scope.champs = allChampService.getChamps();
 
 	$scope.backToPick = function() {
@@ -30,7 +30,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location) {
     }
 
     $scope.toogleView = function() {
-    	$location.path("/allChamps");
+    	$location.path("/allChamps/" +  $routeParams.id);
     }
 })
 
