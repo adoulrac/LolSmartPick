@@ -2,11 +2,11 @@
     <div class="team-panel" id="ally-panel">
         <div class="cards" ng-repeat="ally in allies">
             <div class="img-content" ng-click="selectChamp($index)">
-                <img ng-src="img/icons/{{ally.img}}"/>
+                <img ng-src="img/icons/{{ally.img}}" />
             </div>
             <div class="lane-content" ng-click="changePosteAlly(ally)">
                 <div class="lane-icon">
-                    <img src="img/right.svg">
+                    <img src="img/right.svg" />
                 </div>
                 <div class="lane-name" ng-bind-html="trulyTrustHTML(ally.poste)"></div>
             </div>
@@ -20,7 +20,7 @@
             </div>
             <div class="lane-content" ng-click="changePosteEnnemy(ennemy)">
                 <div class="lane-icon">
-                    <img src="img/left.svg">
+                    <img src="img/left.svg" />
                 </div>
                 <div class="lane-name" ng-bind-html="trulyTrustHTML(ennemy.poste)"></div>
             </div>

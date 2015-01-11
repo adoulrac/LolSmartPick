@@ -1,5 +1,6 @@
-lolsmartpick.controller('welcomeController', function($scope, $location) {
+lolsmartpick.controller('welcomeController', function($scope, $location, $sce, welcomeService) {
 	$scope.goToPickAssistance = function(){
+		welcomeService.initializePick();
 		$location.path("/pick");
 	}
 })
@@ -48,8 +49,6 @@ lolsmartpick.controller('welcomeController', function($scope, $location) {
 	$scope.allies = posteService.getAllies();
 
 	$scope.ennemies = posteService.getEnnemies();
-
-	console.log($scope.allies);
 
 	$scope.trulyTrustHTML = function(html){
 		return $sce.trustAsHtml(html);

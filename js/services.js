@@ -49,6 +49,24 @@ lolsmartpick.service('posteService', function() {
 	getEnnemiesPoste : function() {
 		return ennemiesPoste;
 	},
+	
+	resetAll : function(){
+		console.log("Reset pick");
+		allies = [
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
+		];
+		ennemies = [
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
+		];
+	},
 
 	changeAlly : function(index, champ){
 		console.log(champ.name + " added at the index " + index);
@@ -105,5 +123,13 @@ lolsmartpick.service('allChampService', function(posteService, $filter) {
 				break;
 			}
 		}
+	}
+});
+
+lolsmartpick.service('welcomeService', function(posteService, $filter) {
+
+	this.initializePick = function(){
+		console.log("Pick initialization");
+		posteService.resetAll();
 	}
 });
