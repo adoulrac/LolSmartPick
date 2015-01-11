@@ -7,7 +7,7 @@
 		<div class="assistance-button">
 			Pick Assistance
 			<label class="toggle">
-		   		<input type="checkbox" ng-model="toogle" ng-change="toogleView()" toggle-class="toggle-calm">
+		   		<input type="checkbox" ng-model="toogle" ng-change="toogleView()" toggle-class="toggle-calm" />
 		   		<div class="track">
 		     		<div class="handle"></div>
 		   		</div>
@@ -18,12 +18,12 @@
 	<div class="list list-inset">
 	  	<label class="item item-input">
 	    	<i class="icon ion-search placeholder-icon"></i>
-	    	<input type="text" placeholder="Search" ng-model="query">
+	    	<input type="text" placeholder="Search" ng-model="query" />
 	  	</label>
 	</div>
 	<div class="card champCard" ng-repeat="champ in champs | filter:{name:query, use:false}" ng-click="selectChamp(champ)">
 		<div class="item item-body champBody">
-			<img class="full-image" src="img/icons/{{champ.image}}">
+			<img class="full-image" src="img/icons/{{champ.image}}" />
 			<p>{{champ.name}}</p>
 	  	</div>
 	</div>
