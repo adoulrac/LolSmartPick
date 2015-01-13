@@ -53,33 +53,18 @@ lolsmartpick.service('posteService', function() {
 	resetAll : function(){
 		console.log("Reset pick");
 		allies = [
-<<<<<<< HEAD
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
 		];
 		ennemies = [
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"}
-=======
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""}
-		];
-		ennemies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""}
->>>>>>> 9b77a6a7c6af11ad62da0d4adb5e166d0b6e662d
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
 		];
 	},
 
