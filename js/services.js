@@ -19,19 +19,19 @@ lolsmartpick.service('posteService', function() {
 	];
 
 	var allies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"}
 	];
 
 	var ennemies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"}
 	];
 
 	return {
@@ -54,18 +54,18 @@ lolsmartpick.service('posteService', function() {
 	resetAll : function(){
 		console.log("Reset pick");
 		allies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"}
 		];
 		ennemies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"},
+			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "id":"-1"}
 		];
 		for(var i=0; i<champs.length; i++){
 			champs[i].use = false;
@@ -81,7 +81,6 @@ lolsmartpick.service('posteService', function() {
 	changeEnnemy : function(index, champ){
 		ennemies[index].hero = champ.name;
 		ennemies[index].img = champ.image;
-		ennemies[index].counters = champ.counters;
 	},
 
 	changePosteAlly : function(Oldposte) {
