@@ -18,19 +18,19 @@ lolsmartpick.service('posteService', function() {
 	];
 
 	var allies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""}
 	];
 
 	var ennemies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""}
 	];
 
 	return {
@@ -53,18 +53,18 @@ lolsmartpick.service('posteService', function() {
 	resetAll : function(){
 		console.log("Reset pick");
 		allies = [
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""}
 		];
 		ennemies = [
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE},
-			{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : ""}
 		];
 	},
 
@@ -77,6 +77,7 @@ lolsmartpick.service('posteService', function() {
 	changeEnnemy : function(index, champ){
 		ennemies[index].hero = champ.name;
 		ennemies[index].img = champ.image;
+		ennemies[index].counters = champ.counters;
 	},
 
 	changePosteAlly : function(Oldposte) {

@@ -35,8 +35,8 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
     }
 })
 
-.controller('resultController', function($scope, $location) {
-	//todo
+.controller('resultController', function($scope, $location, $sce, posteService) {
+	$scope.pickedEnnemies = posteService.getEnnemies();
 })
 
 .controller('pickController', ['$scope', '$location', 
