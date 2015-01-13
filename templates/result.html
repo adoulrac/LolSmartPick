@@ -1,29 +1,10 @@
 <div class="content" ng-controller="resultController">
+  	<p style="text-align:center;font-size:18px;">Ennemies counter information</p>
 	<div class="list">
-    	<a class="item item-thumbnail-left" href="#">
-      		<img src="img/icons/AnnieSquare.png">
-      		<h2>Annie</h2>
-      		<p>Description</p>
-    	</a>
-    	<a class="item item-thumbnail-left" href="#">
-      		<img src="img/icons/AnnieSquare.png">
-      		<h2>Annie</h2>
-      		<p>Description</p>
-    	</a>
-    	<a class="item item-thumbnail-left" href="#">
-      		<img src="img/icons/AnnieSquare.png">
-      		<h2>Annie</h2>
-      		<p>Description</p>
-    	</a>
-    	<a class="item item-thumbnail-left" href="#">
-      		<img src="img/icons/AnnieSquare.png">
-      		<h2>Annie</h2>
-      		<p>Description</p>
-    	</a>
-    	<a class="item item-thumbnail-left" href="#">
-      		<img src="img/icons/AnnieSquare.png">
-      		<h2>Annie</h2>
-      		<p>Description</p>
+    	<a class="item item-thumbnail-left" href="#" ng-repeat="champ in pickedEnnemies">
+      		<img src="img/icons/{{champ.img}}">
+      		<h2>{{champ.hero}}</h2>
+      		<p>{{champ.counters}}</p>
     	</a>
 	</div>
 </div>
