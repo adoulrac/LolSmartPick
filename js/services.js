@@ -200,4 +200,5 @@ lolsmartpick.service('assistanceService', function(posteService, $filter) {
 
 		return res;
 	}
+
 });

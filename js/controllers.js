@@ -31,7 +31,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
     }
 })
 
-.controller('assistanceController', function($scope, $location, $routeParams, assistanceService) {
+.controller('assistanceController', function($scope, $location, $routeParams, allChampService, assistanceService) {
 	$scope.champs = assistanceService.assistance();
 
 	$scope.backToPick = function() {
@@ -41,6 +41,11 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
     $scope.toogleView = function() {
     	$location.path("/allChamps/" +  $routeParams.id);
     }
+    
+    $scope.selectChamp = function(champ) {
+		allChampService.selectChamp(champ, $routeParams.id);
+		$location.path("/pick");
+	}
 })
 
 .controller('resultController', function($scope, $location, $sce, posteService) {
