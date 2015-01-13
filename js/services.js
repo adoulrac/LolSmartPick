@@ -139,3 +139,13 @@ lolsmartpick.service('welcomeService', function(posteService, $filter) {
 		posteService.resetAll();
 	}
 });
+
+lolsmartpick.service('assistanceService', function(posteService, $filter) {
+
+	this.assistance = function(){
+		console.log("assistance initialization");
+		console.log(matriceChamps[1][2]);
+		var allies = posteService.getAllies();
+		var ennemies = posteService.getEnnemies();
+	}
+});
