@@ -9,10 +9,8 @@ body, html {
 	width : 100%;
 }
 
-.icon_welcome {
-    position: absolute;
-    top: 0; bottom:0; left: 0; right:0;
-    margin: auto;
+.buttons{
+	margin-top:40%;
 }
 
 tr, td, table {
@@ -62,10 +60,6 @@ tr, td, table {
 .back{
 	float:left;
 	margin-left:2%;
-}
-
-#buttons{
-	margin-top:95%;
 }
 
 .assistance-button{
