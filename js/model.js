@@ -126,9 +126,9 @@ var list_champ = [
 {id:120, name:'Ziggs', lanes: ['mid'], image: 'ziggs.png', counters: "Heavy cc, silence, mobility, sustain", use: 'false'},
 {id:121, name:'Zilean', lanes: ['mid','sup'], image: 'zilean.png', counters: "Gap closers, shields, high sustain", use: 'false'},
 {id:122, name:'Zyra', lanes: ['mid','sup'], image: 'zyra.png', counters: "RAS", use: 'false'}
-
 ];
 
+/*
 var matrice[][] = [
  ['', 'Aatrox', 'Ahri', 'Akali', 'Alistar', 'Amumu', 'Anivia', 'Annie', 'Ashe', 'Azir', 'Blitzcrank', 'Brand', 'Braum', 'Caitlyn', 'Cassiopeia', "Cho'Gath", 'Corki', 'Darius', 'Diana', 'Dr.mundo', 'Draven', 'Elise', 'Evelynn', 'Ezreal', 'Fiddlesticks', 'Fiora', 'Fizz', 'Galio', 'Gangplank', 'Garen', 'Gnar', 'Gragas', 'Graves', 'Hecarim', 'Heimerdinger', 'Irelia', 'Janna', 'JarvanIV', 'Jax', 'Jayce', 'Jinx', 'Kalista', 'Karma', 'Karthus', 'Kassadin', 'Katarina', 'Kayle', 'Kennen', "Kha'Zix", "Kog'Maw", 'LeBlanc', 'Lee Sin', 'Leona', 'Lissandra', 'Lucian', 'Lulu', 'Lux', 'Malphite', 'Malzahar', 'Maokai', 'Master Yi', 'Miss Fortune', 'Mordekaiser', 'Morgana', 'Nami', 'Nasus', 'Nautinus', 'Nidalee', 'Nocturne', 'Nunu', 'Olaf', 'Oriana', 'Pantheon', 'Poppy', 'Quinn', 'Rammus', "Rek'Sai", 'Renekton', 'Rengar', 'Riven', 'Rumble', 'Ryze', 'Sejuani', 'Shaco', 'Shen', 'Shyvana', 'Singed', 'Sion', 'Sivir', 'Skarner', 'Sona', 'Soraka', 'Swain', 'Syndra', 'Talon', 'Taric', 'Teemo', 'Thresh', 'Tristana', 'Trundle', 'Tryndamere', 'Twistedfate', 'Twitch', 'Udyr', 'Urgot', 'Varus', 'Vayne', 'Veigar', "Vel'Koz", 'Vi', 'Viktor', 'Vladimir', 'Volibear', 'Warwick', 'Wukong', 'Xerath', 'Xin Zhao', 'Yasuo', 'Yorick', 'Zac', 'Zed', 'Ziggs', 'Zilean', 'Zyra']
  ['Aatrox', 0, -4, 2, -4, -2, 1, -4, 1, -4, 4, 2, -2, -5, -2, -4, 0, 1, 2, 4, 5, 5, 4, 2, -5, 1, -4, 0, -1, -4, 1, -3, 5, 4, 4, 5, 2, -2, -3, -5, -3, 4, -5, 4, 5, 2, -4, 2, -5, 3, 1, 3, -3, -1, 4, -1, 4, 5, 5, -4, -4, 2, 2, -4, -5, -4, -4, -3, 2, -3, -5, -3, 4, 2, 1, 1, -5, 2, -4, -1, -5, -4, -1, 1, -2, -1, -4, -3, 3, 1, -1, -3, 2, -1, 2, 3, -5, 0, 3, 4, 4, 3, 4, -3, -3, 3, 3, -4, -5, -3, 0, 4, -5, -2, -1, 5, -3, 4, 1, -3, -5, 1, 3, 4]
@@ -255,3 +255,4 @@ var matrice[][] = [
  ['Zilean', 1, 1, 3, 4, 1, 4, 3, 1, 0, 4, 0, 3, 5, 0, 4, 2, 5, 1, 0, 4, 2, 1, 0, 4, 3, 0, 5, 1, 2, 3, 5, 0, 3, 2, 1, 3, 5, 2, 0, 1, 0, 3, 3, 3, 4, 3, 1, 0, 4, 3, 4, 2, 5, 2, 3, 3, 1, 3, 3, 0, 3, 4, 1, 3, 5, 1, 1, 3, 4, 4, 4, 1, 1, 3, 4, 2, 5, 1, 4, 0, 0, 1, 1, 2, 5, 1, 4, 3, 2, 4, 3, 2, 0, 3, 3, 5, 0, 5, 0, 4, 2, 0, 4, 4, 2, 0, 1, 1, 4, 1, 3, 3, 1, 4, 5, 4, 3, 0, 4, 2, 0, 0, -3]
  ['Zyra', 2, 1, 0, 4, 2, 0, 2, 1, 1, 0, 1, 2, 2, 5, 4, 5, 3, 1, 5, 2, 3, 5, 1, 0, 2, 2, 1, 4, 4, 5, 3, 2, 5, 1, 3, 5, 5, 0, 5, 2, 4, 1, 3, 4, 2, 5, 0, 4, 5, 5, 0, 1, 3, 1, 2, 3, 0, 3, 5, 4, 0, 3, 1, 5, 2, 0, 1, 2, 2, 3, 4, 5, 2, 2, 5, 0, 3, 5, 3, 1, 4, 3, 4, 0, 5, 2, 0, 4, 1, 5, 2, 2, 1, 0, 5, 3, 1, 2, 4, 3, 4, 2, 4, 5, 5, 2, 1, 0, 2, 3, 0, 4, 0, 5, 3, 1, 1, 5, 0, 0, 5, 5, 0]
 ];
+*/
