@@ -183,3 +183,8 @@ tr, td, table {
 	margin-top : 0px;
 	text-align : center;
 }
+.champExclude {
+	filter:alpha(opacity=50); /* IE */
+    opacity: 0.5; /* Safari, Opera */
+    -moz-opacity:0.50; /* FireFox */
+}

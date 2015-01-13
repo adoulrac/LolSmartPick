@@ -3,6 +3,10 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 		welcomeService.initializePick();
 		$location.path("/pick");
 	}
+
+	$scope.goToParameters = function(){
+		$location.path("/parameters");
+	}
 	
 	$scope.goToAboutUs = function(){
 		$location.path("/about");
@@ -45,6 +49,23 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 
 .controller('aboutController', function($scope, $location, $sce) {
 	// NOP
+})
+
+.controller('parametersController', function($scope, $location, $sce) {
+	$scope.champs = list_champ;
+
+	$scope.backToHome = function() {
+    	$location.path("/welcome");
+    }
+
+    $scope.excludeChamp = function(index){
+    	if(list_champ[index].exclude == 'true'){
+    		list_champ[index].exclude = 'false';
+    	} else {
+     		list_champ[index].exclude = 'true';   		
+    	}
+    }
+
 })
 
 .controller('pickController', ['$scope', '$location', 

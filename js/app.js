@@ -46,6 +46,11 @@ var lolsmartpick = angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'
     controller: 'aboutController'
   });
 
+  $routeProvider.when('/parameters', {
+    templateUrl: 'templates/parametre.html',
+    controller: 'parametersController'
+  });
+
   // if none of the above routes are met, use this fallback
   // which executes the 'IntroCtrl' controller (controllers.js)
   $routeProvider.otherwise({

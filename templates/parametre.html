@@ -1,0 +1,23 @@
+<ion-content class="padding-top-2">
+<div class="content" ng-controller="parametersController">
+	<div>
+		<div class="back">
+			<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backToHome()">Back</a>
+		</div>
+	</div>
+	<br/><br/><br/>
+	<p style="text-align:center;font-size:16px;">Sélectionnez les champions que vous ne souhaitez pas jouer</p>
+	<div class="list list-inset">
+	  	<label class="item item-input">
+	    	<i class="icon ion-search placeholder-icon"></i>
+	    	<input type="text" placeholder="Search" ng-model="query" />
+	  	</label>
+	</div>
+	<div class="card champCard" ng-repeat="champ in champs | filter:{name:query}" ng-click="excludeChamp(champ.id)">
+		<div class="item item-body champBody" ng-class="{champExclude: champ.exclude=='true'}">
+			<img class="full-image" src="img/icons/{{champ.image}}" />
+			<p>{{champ.name}}</p>
+	  	</div>
+	</div>
+</div>
+</ion-content>
