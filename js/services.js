@@ -76,12 +76,14 @@ lolsmartpick.service('posteService', function() {
 		console.log(champ.name + " added at the index " + index);
 		allies[index].hero = champ.name;
 		allies[index].img = champ.image;
+		allies[index].id = champ.id;
 	},
 
 	changeEnnemy : function(index, champ){
 		ennemies[index].hero = champ.name;
 		ennemies[index].img = champ.image;
 		ennemies[index].counters = champ.counters;
+		ennemies[index].id = champ.id;
 	},
 
 	changePosteAlly : function(Oldposte) {
@@ -147,12 +149,18 @@ lolsmartpick.service('assistanceService', function(posteService, $filter) {
 		var alliesPoste = posteService.getAllies();
 		var ennemiesPoste = posteService.getEnnemies();
 		//on retire les id -1
-		var allies = alliesPoste.filter(function (el) {
-                        return el.id != "-1";
-                     });
-		var ennemies = ennemiesPoste.filter(function (el) {
-                        return el.id !== "-1";
-                     });
+		var allies = [];
+		var ennemies = [];
+		for (indexA = 0; indexA < alliesPoste.length; ++indexA) {
+			if(alliesPoste[indexA].id != -1) {
+				allies.push(alliesPoste[indexA].id);
+			}
+		}
+		for (indexE = 0; indexE < ennemiesPoste.length; ++indexE) {
+			if(ennemiesPoste[indexE].id != -1) {
+				ennemies.push(ennemiesPoste[indexE].id);
+			}
+		}
 		/*var allies = [1,5,7,13];
 		var ennemies = [85,43,24,121,2];*/
 		var picks = allies.concat(ennemies);
