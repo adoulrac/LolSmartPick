@@ -144,8 +144,60 @@ lolsmartpick.service('assistanceService', function(posteService, $filter) {
 
 	this.assistance = function(){
 		console.log("assistance initialization");
-		console.log(matriceChamps[1][2]);
-		var allies = posteService.getAllies();
-		var ennemies = posteService.getEnnemies();
+		var alliesPoste = posteService.getAllies();
+		var ennemiesPoste = posteService.getEnnemies();
+		//on retire les id -1
+		var allies = alliesPoste.filter(function (el) {
+                        return el.id != "-1";
+                     });
+		var ennemies = ennemiesPoste.filter(function (el) {
+                        return el.id !== "-1";
+                     });
+		/*var allies = [1,5,7,13];
+		var ennemies = [85,43,24,121,2];*/
+		var picks = allies.concat(ennemies);
+		var listResult = Array.apply(null, new Array(matriceChamps.length-1)).map(Number.prototype.valueOf,0);
+		var score;
+		//boucle sur tous les choix potentiels
+		for (index = 0; index < listResult.length; ++index) {
+			//si ce n'est pas un perso déjà choisi
+		    if(picks.indexOf(index) == -1) {
+		    	score = 0;
+		    	for (indexA = 0; indexA < allies.length; ++indexA) {
+		    		if(index < indexA) {
+		    			score += matriceChamps[allies[indexA]][index];
+		    		} else {
+		    			score += matriceChamps[index][allies[indexA]];
+		    		}
+		    	}
+		    	for (indexE = 0; indexE < ennemies.length; ++indexE) {
+		    		if(index < indexE) {
+		    			score += matriceChamps[index][ennemies[indexE]];
+		    		} else {
+		    			score -= matriceChamps[ennemies[indexE]][index];
+		    		}
+		    	}
+		    	listResult[index] = score;
+		    } else {
+		    	listResult[index] = -100;
+		    }
+		}
+		//on copie les résultats dans une map (on veut les index)
+		var resultScoreIndex = [];
+		for (var i in listResult) {
+		    resultScoreIndex.push([listResult[i],i]);
+		}
+		//tri décroissant
+		resultScoreIndex.sort(function(left, right) {
+		  return left[0] > right[0] ? -1 : 1;
+		});
+		//on récupère les 5 premiers depuis la liste d'objet du modèle
+		var indexes5 = resultScoreIndex.slice(0,5);
+		var res = [];
+		for (index = 0; index < indexes5.length; ++index) {
+			res.push(list_champ[indexes5[index][1]]);
+		}
+
+		return res;
 	}
 });
