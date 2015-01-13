@@ -21,7 +21,7 @@
 	    	<input type="text" placeholder="Search" ng-model="query" />
 	  	</label>
 	</div>
-	<div class="card champCard" ng-repeat="champ in champs | filter:{name:query, use:false}" ng-click="selectChamp(champ)">
+	<div class="card champCard" ng-repeat="champ in champs | filter:{name:query, use:'false'}" ng-click="selectChamp(champ)">
 		<div class="item item-body champBody">
 			<img class="full-image" src="img/icons/{{champ.image}}" />
 			<p>{{champ.name}}</p>
