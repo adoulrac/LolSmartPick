@@ -14,8 +14,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 })
 
 .controller('allChampsController', function($scope, $location, $routeParams, allChampService) {
-
-	$scope.champs = list_champ;
+	$scope.champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
 
 	$scope.selectChamp = function(champ) {
 		allChampService.selectChamp(champ, $routeParams.id);
@@ -57,18 +56,19 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 })
 
 .controller('parametersController', function($scope, $location, $sce) {
-	$scope.champs = list_champ;
+	$scope.champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
 
 	$scope.backToHome = function() {
     	$location.path("/welcome");
     }
 
     $scope.excludeChamp = function(index){
-    	if(list_champ[index].exclude == 'true'){
-    		list_champ[index].exclude = 'false';
+    	if($scope.champs[index].exclude == 'true'){
+    		$scope.champs[index].exclude = 'false';
     	} else {
-     		list_champ[index].exclude = 'true';   		
+     		$scope.champs[index].exclude = 'true';   		
     	}
+    	window.localStorage['localChamps'] = JSON.stringify($scope.champs);
     }
 
 })

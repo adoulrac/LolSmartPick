@@ -1,6 +1,6 @@
 lolsmartpick.service('posteService', function() {
 	var DEFAULT_POSTE = "N<br/>O<br/>N<br/>E";
-	var champs = list_champ;
+	var champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
 
 	var alliesPoste = [
 		{"name" : "T<br/>O<br/>P"},
@@ -33,6 +33,8 @@ lolsmartpick.service('posteService', function() {
 		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
 		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
 	];
+	
+	var excludesChamps = new Array();
 
 	return {
 	getAllies : function() {
@@ -49,6 +51,18 @@ lolsmartpick.service('posteService', function() {
 
 	getEnnemiesPoste : function() {
 		return ennemiesPoste;
+	},
+	
+	getExcludes : function() {
+		excludesChamps = new Array();
+		console.log(champs);
+		for(var i=0; i < champs.length; i++){
+		console.log(champs[i].exclude)
+			if(champs[i].exclude == true) {
+				excludesChamps.push(champs[i]);
+			}
+		}
+		return excludesChamps;
 	},
 	
 	resetAll : function(){
@@ -110,8 +124,8 @@ lolsmartpick.service('posteService', function() {
 });
 
 lolsmartpick.service('allChampService', function(posteService, $filter) {
-	var champs = list_champ;
-
+	var champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
+	
 	this.getChamps = function(){
 		return champs;
 	}
@@ -148,6 +162,8 @@ lolsmartpick.service('assistanceService', function(posteService, $filter) {
 		console.log("assistance initialization");
 		var alliesPoste = posteService.getAllies();
 		var ennemiesPoste = posteService.getEnnemies();
+		var excludes = posteService.getExcludes();
+		console.log(excludes);
 		//on retire les id -1
 		var allies = [];
 		var ennemies = [];
@@ -163,7 +179,7 @@ lolsmartpick.service('assistanceService', function(posteService, $filter) {
 		}
 		/*var allies = [1,5,7,13];
 		var ennemies = [85,43,24,121,2];*/
-		var picks = allies.concat(ennemies);
+		var picks = allies.concat(ennemies).concat(excludes);
 		var listResult = Array.apply(null, new Array(matriceChamps.length-1)).map(Number.prototype.valueOf,0);
 		var score;
 		//boucle sur tous les choix potentiels
