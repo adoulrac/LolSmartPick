@@ -172,14 +172,14 @@ lolsmartpick.service('assistanceService', function(posteService, $filter) {
 		    if(picks.indexOf(index) == -1) {
 		    	score = 0;
 		    	for (indexA = 0; indexA < allies.length; ++indexA) {
-		    		if(index < indexA) {
+		    		if(index < allies[indexA]) {
 		    			score += matriceChamps[allies[indexA]][index];
 		    		} else {
 		    			score += matriceChamps[index][allies[indexA]];
 		    		}
 		    	}
 		    	for (indexE = 0; indexE < ennemies.length; ++indexE) {
-		    		if(index < indexE) {
+		    		if(index < ennemies[indexE]) {
 		    			score += matriceChamps[index][ennemies[indexE]];
 		    		} else {
 		    			score -= matriceChamps[ennemies[indexE]][index];
