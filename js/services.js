@@ -3,8 +3,8 @@ lolsmartpick.service('posteService', function() {
 	var champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
 
 	var alliesPoste = [
-		{"name" : "T<br/>O<br/>P"},
 		{"name" : "S<br/>U<br/>P"},
+		{"name" : "T<br/>O<br/>P"},
 		{"name" : "A<br/>D<br/>C"},
 		{"name" : "M<br/>I<br/>D"},
 		{"name" : "J<br/>U<br/>N"}
@@ -54,11 +54,10 @@ lolsmartpick.service('posteService', function() {
 	},
 	
 	getExcludes : function() {
-		excludesChamps = new Array();
-		console.log(champs);
+		excludesChamps = new Array(champs.length);
 		for(var i=0; i < champs.length; i++){
-		console.log(champs[i].exclude)
-			if(champs[i].exclude == true) {
+			if(champs[i].exclude == "true") {
+				console.log("Exclude " + champs[i].name);
 				excludesChamps.push(champs[i]);
 			}
 		}
