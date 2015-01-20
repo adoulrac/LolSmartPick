@@ -19,19 +19,19 @@ lolsmartpick.service('posteService', function() {
 	];
 
 	var allies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""}
 	];
 
 	var ennemies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""}
 	];
 	
 	var excludesChamps;
@@ -67,18 +67,18 @@ lolsmartpick.service('posteService', function() {
 	resetAll : function(){
 		console.log("Reset pick");
 		allies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""}
 		];
 		ennemies = [
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"},
-		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""},
+		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1", "title": "", "blurb": "", "allytips": "", "enemytips": "", "tags": ""}
 		];
 		for(var i=0; i<champs.length; i++){
 			champs[i].use = false;

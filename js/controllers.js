@@ -49,7 +49,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 
 .controller('resultController', function($scope, $http, $location, $sce, posteService) {
 	$scope.pickedEnnemies = posteService.getEnnemies();
-	$scope.detailsEnnemies = new Array();
+	//$scope.detailsEnnemies = new Array();
 	
 	$scope.goToFullResult = function() {
     	$http.get('data/championFull.json')
@@ -61,11 +61,15 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
     				
     				angular.forEach(json.data, function(value, key) {
     					if (value.name === champName) {
-    						$scope.detailsEnnemies.push(value);
+    						$scope.pickedEnnemies[c].title = value.title;
+    						$scope.pickedEnnemies[c].blurb = value.blurb;
+    						$scope.pickedEnnemies[c].allytips = value.allytips;
+    						$scope.pickedEnnemies[c].enemytips = value.enemytips;
+    						$scope.pickedEnnemies[c].tags = value.tags;
     					}
 					});
     			}
-    			console.log($scope.detailsEnnemies);
+    			//console.log($scope.detailsEnnemies);
     			$location.path("/fullResult");
     	});
     	

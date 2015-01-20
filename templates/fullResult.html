@@ -1,18 +1,22 @@
+<ion-content>
 <div class="content" ng-controller="resultController">
 
 <ion-slide-box on-slide-changed="slideHasChanged($index)">
-  <ion-slide ng-repeat="detail in detailsEnnemies">
+  <ion-slide ng-repeat="detail in pickedEnnemies">
   
     <div class="box white">
     	<div class="list card">
   			<div class="item item-avatar">
-    			<img src="img/icons/{{detail.image.full}}" />-
-    			<h2>{{detail.name}}</h2>
+    			<img src="img/icons/{{detail.img}}" />
+    			<h2>{{detail.hero}}</h2>
     			<p>{{detail.title}}</p>
   			</div>
 
   			<div class="item item-body">
-				<p>{{detail.blurb}}</p>
+				<p style="text-align:justify;">Tags: {{detail.tags.join(", ")}}</p>
+				<p style="text-align:justify;">Ennemy tips: {{detail.enemytips.join(", ")}}</p>
+				<p style="text-align:justify;">Ally tips: {{detail.allytips.join(", ")}}</p>
+				<p style="text-align:justify;">Short Blurb: {{detail.blurb}}</p>
   			</div>
 
 		</div>
@@ -22,3 +26,4 @@
 </ion-slide-box>
 
 </div>
+</ion-content>
