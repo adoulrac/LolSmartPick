@@ -54,7 +54,7 @@ lolsmartpick.service('posteService', function() {
 	},
 	
 	getExcludes : function() {
-		excludesChamps = new Array(champs.length);
+		excludesChamps = new Array();
 		for(var i=0; i < champs.length; i++){
 			if(champs[i].exclude == "true") {
 				console.log("Exclude " + champs[i].name);
@@ -157,23 +157,35 @@ lolsmartpick.service('welcomeService', function(posteService, $filter) {
 
 lolsmartpick.service('assistanceService', function(posteService, $filter) {
 
-	this.assistance = function(){
+	this.assistance = function(routeParamId, posteLabel){
 		console.log("assistance initialization");
-		var alliesPoste = posteService.getAllies();
-		var ennemiesPoste = posteService.getEnnemies();
-		var excludes = posteService.getExcludes();
-		console.log(excludes);
+		var alliesChamps = posteService.getAllies();
+		var ennemiesChamps = posteService.getEnnemies();
+		var excludesChamps = posteService.getExcludes();
+		console.log(excludesChamps);
 		//on retire les id -1
 		var allies = [];
 		var ennemies = [];
-		for (indexA = 0; indexA < alliesPoste.length; ++indexA) {
-			if(alliesPoste[indexA].id != -1) {
-				allies.push(alliesPoste[indexA].id);
+		var excludes = [];
+		for (indexA = 0; indexA < alliesChamps.length; ++indexA) {
+			if(alliesChamps[indexA].id != -1) {
+				allies.push(alliesChamps[indexA].id);
 			}
 		}
-		for (indexE = 0; indexE < ennemiesPoste.length; ++indexE) {
-			if(ennemiesPoste[indexE].id != -1) {
-				ennemies.push(ennemiesPoste[indexE].id);
+		var archEnnemyId = -1;
+		for (indexE = 0; indexE < ennemiesChamps.length; ++indexE) {
+			if(ennemiesChamps[indexE].id != -1) {
+				ennemies.push(ennemiesChamps[indexE].id);
+				//trouver l'id de l'ennemi qui a un poste correspondant
+				if(routeParamId <= 4 && alliesChamps[routeParamId].poste != "N<br/>O<br/>N<br/>E" && ennemiesChamps[indexE].poste == alliesChamps[routeParamId].poste) {
+					archEnnemyId = ennemiesChamps[indexE].id;
+				}
+			}
+		}
+		console.log(archEnnemyId);
+		for (indexEx = 0; indexEx < excludesChamps.length; ++indexEx) {
+			if(excludesChamps[indexEx].id != -1) {
+				excludes.push(excludesChamps[indexEx].id);
 			}
 		}
 		/*var allies = [1,5,7,13];
@@ -195,9 +207,17 @@ lolsmartpick.service('assistanceService', function(posteService, $filter) {
 		    	}
 		    	for (indexE = 0; indexE < ennemies.length; ++indexE) {
 		    		if(index < ennemies[indexE]) {
-		    			score += matriceChamps[index][ennemies[indexE]];
+		    			if(archEnnemyId == ennemies[indexE]) {
+		    				score += 2*matriceChamps[index][ennemies[indexE]];
+		    			} else {
+							score += matriceChamps[index][ennemies[indexE]];
+		    			}
 		    		} else {
-		    			score -= matriceChamps[ennemies[indexE]][index];
+		    			if(archEnnemyId == ennemies[indexE]) {
+		    				score -= 2*matriceChamps[ennemies[indexE]][index];
+		    			} else {
+		    				score -= matriceChamps[ennemies[indexE]][index];
+		    			}
 		    		}
 		    	}
 		    	listResult[index] = score;

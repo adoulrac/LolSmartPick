@@ -31,7 +31,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 })
 
 .controller('assistanceController', function($scope, $location, $routeParams, allChampService, assistanceService) {
-	$scope.champs = assistanceService.assistance();
+	$scope.champs = assistanceService.assistance($routeParams.id);
 
 	$scope.backToPick = function() {
     	$location.path("/pick");
