@@ -3,19 +3,21 @@ lolsmartpick.service('posteService', function() {
 	var champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
 
 	var alliesPoste = [
-		{"name" : "S<br/>U<br/>P"},
-		{"name" : "T<br/>O<br/>P"},
-		{"name" : "A<br/>D<br/>C"},
-		{"name" : "M<br/>I<br/>D"},
-		{"name" : "J<br/>U<br/>N"}
+		{"name" : DEFAULT_POSTE, "label":"NONE", use:true},
+		{"name" : "S<br/>U<br/>P", "label":"SUP", use:false},
+		{"name" : "T<br/>O<br/>P", "label":"TOP", use:false},
+		{"name" : "A<br/>D<br/>C", "label":"ADC", use:false},
+		{"name" : "M<br/>I<br/>D", "label":"MID", use:false},
+		{"name" : "J<br/>U<br/>N", "label":"JUN", use:false}
 	];
 
 	var ennemiesPoste = [
-		{"name" : "T<br/>O<br/>P"},
-		{"name" : "S<br/>U<br/>P"},
-		{"name" : "A<br/>D<br/>C"},
-		{"name" : "M<br/>I<br/>D"},
-		{"name" : "J<br/>U<br/>N"}
+		{"name" : DEFAULT_POSTE, "label":"NONE", use:true},
+		{"name" : "S<br/>U<br/>P", "label":"SUP", use:false},
+		{"name" : "T<br/>O<br/>P", "label":"TOP", use:false},
+		{"name" : "A<br/>D<br/>C", "label":"ADC", use:false},
+		{"name" : "M<br/>I<br/>D", "label":"MID", use:false},
+		{"name" : "J<br/>U<br/>N", "label":"JUN", use:false}
 	];
 
 	var allies = [
@@ -100,24 +102,84 @@ lolsmartpick.service('posteService', function() {
 	},
 
 	changePosteAlly : function(Oldposte) {
-		if(Oldposte.poste != DEFAULT_POSTE){
-			alliesPoste.push({"name" : Oldposte.poste});
-		}
-		Oldposte.poste = alliesPoste[0].name
-		alliesPoste.splice(0,1);
-		if(alliesPoste.length <= 0){
-			alliesPoste.push({"name" : DEFAULT_POSTE});
+		//if(Oldposte.poste != DEFAULT_POSTE){
+		//	alliesPoste.push({"name" : Oldposte.poste});
+		//}
+		//Oldposte.poste = alliesPoste[0].name
+		//alliesPoste.splice(0,1);
+		//if(alliesPoste.length <= 0){
+		//	alliesPoste.push({"name" : DEFAULT_POSTE});
+		//}
+		for(var i=0; i<alliesPoste.length; i++){
+		//for(var poste in alliesPoste){
+			if(alliesPoste[i].name == Oldposte.poste){
+				for(var j=i+1; j<alliesPoste.length; j++){
+					console.log(alliesPoste.length);
+					if(alliesPoste[j].use == false){
+						Oldposte.poste = alliesPoste[j].name;
+						alliesPoste[j].use = true;
+						alliesPoste[i].use = false;
+						return;
+					}
+				}
+				for(var j=0; j<i-1; j++){
+					console.log("toto");
+					if(alliesPoste[j].use == false){
+						Oldposte.poste = alliesPoste[j].name;
+						alliesPoste[j].use = true;
+						alliesPoste[i].use = false;
+						return;
+					}
+				}
+			}
 		}
 	},
 
-	changePosteEnnemy : function(Oldposte) {
-		if(Oldposte.poste != DEFAULT_POSTE){
-			ennemiesPoste.push({"name" : Oldposte.poste});
+	changePosteAssistance : function(poste, id){
+		var allyTemp = allies[id];
+		var newPoste = poste;
+		for(var i=0; i<alliesPoste.length; i++){
+			if(alliesPoste[i].name == allyTemp.poste){
+				alliesPoste[i].use = false;
+			}
+			if(alliesPoste[i].label == poste){
+				alliesPoste[i].use = true;
+				newPoste = alliesPoste[i];
+			}
 		}
-		Oldposte.poste = ennemiesPoste[0].name
-		ennemiesPoste.splice(0,1);
-		if(ennemiesPoste.length <= 0){
-			ennemiesPoste.push({"name" : DEFAULT_POSTE});
+		allies[id].poste = newPoste.name;
+	},
+
+	changePosteEnnemy : function(Oldposte) {
+		//if(Oldposte.poste != DEFAULT_POSTE){
+		//	ennemiesPoste.push({"name" : Oldposte.poste});
+		//}
+		// Oldposte.poste = ennemiesPoste[0].name
+		// ennemiesPoste.splice(0,1);
+		// if(ennemiesPoste.length <= 0){
+		// 	ennemiesPoste.push({"name" : DEFAULT_POSTE});
+		// }
+		for(var i=0; i<ennemiesPoste.length; i++){
+		//for(var poste in alliesPoste){
+			if(ennemiesPoste[i].name == Oldposte.poste){
+				for(var j=i+1; j<ennemiesPoste.length; j++){
+					if(ennemiesPoste[j].use == false){
+						Oldposte.poste = ennemiesPoste[j].name;
+						ennemiesPoste[j].use = true;
+						ennemiesPoste[i].use = false;
+						return;
+					}
+				}
+				for(var j=0; j<i-1; j++){
+					console.log("toto");
+					if(ennemiesPoste[j].use == false){
+						Oldposte.poste = ennemiesPoste[j].name;
+						ennemiesPoste[j].use = true;
+						ennemiesPoste[i].use = false;
+						return;
+					}
+				}
+			}
 		}
 	}};
 });

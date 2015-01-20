@@ -1,3 +1,4 @@
+<ion-content class="padding-top-10">
 <div class="content" ng-controller="assistanceController">
 
 	<div class="padding-top-2">
@@ -14,6 +15,15 @@
 	</label>
 	</div>
 	<div class="list margin-top-15">
+		<label class="item item-input item-select">
+		    <div class="input-label">
+		      Lane
+		    </div>
+		    <select ng-change="changePoste(poste)" ng-model="selectedPoste" ng-options="poste as poste.label for poste in postes | filter:{use:false}">
+		    </select>
+		</label>
+	</div>
+	<div class="list">
     	<a class="item item-thumbnail-left" ng-repeat="champ in champs" ng-click="selectChamp(champ)">
       		<img src="img/icons/{{champ.image}}" />
       		<h2>{{champ.name}}</h2>
@@ -22,3 +32,4 @@
 	</div>
 	
 </div>
+</ion-content>
