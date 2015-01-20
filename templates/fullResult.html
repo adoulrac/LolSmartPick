@@ -1,0 +1,24 @@
+<div class="content" ng-controller="resultController">
+
+<ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide ng-repeat="detail in detailsEnnemies">
+  
+    <div class="box white">
+    	<div class="list card">
+  			<div class="item item-avatar">
+    			<img src="img/icons/{{detail.image.full}}" />-
+    			<h2>{{detail.name}}</h2>
+    			<p>{{detail.title}}</p>
+  			</div>
+
+  			<div class="item item-body">
+				<p>{{detail.blurb}}</p>
+  			</div>
+
+		</div>
+    </div>
+    
+  </ion-slide>
+</ion-slide-box>
+
+</div>

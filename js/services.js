@@ -1,7 +1,7 @@
 lolsmartpick.service('posteService', function() {
 	var DEFAULT_POSTE = "N<br/>O<br/>N<br/>E";
 	var champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
-
+	
 	var alliesPoste = [
 		{"name" : "S<br/>U<br/>P"},
 		{"name" : "T<br/>O<br/>P"},
@@ -34,7 +34,7 @@ lolsmartpick.service('posteService', function() {
 		{"hero" : "Unknown", "img" : "unknown.png", "poste" : DEFAULT_POSTE, "counters" : "", "id":"-1"}
 	];
 	
-	var excludesChamps = new Array();
+	var excludesChamps;
 
 	return {
 	getAllies : function() {
@@ -124,7 +124,7 @@ lolsmartpick.service('posteService', function() {
 
 lolsmartpick.service('allChampService', function(posteService, $filter) {
 	var champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
-	
+
 	this.getChamps = function(){
 		return champs;
 	}

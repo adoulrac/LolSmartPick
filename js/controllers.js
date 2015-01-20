@@ -47,8 +47,31 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 	}
 })
 
-.controller('resultController', function($scope, $location, $sce, posteService) {
+.controller('resultController', function($scope, $http, $location, $sce, posteService) {
 	$scope.pickedEnnemies = posteService.getEnnemies();
+	$scope.detailsEnnemies = new Array();
+	
+	$scope.goToFullResult = function() {
+    	$http.get('data/championFull.json')
+    		.then(function(res) {
+    			var json = angular.fromJson(res.data);
+    			
+    			for(var c in $scope.pickedEnnemies) {
+    				var champName = $scope.pickedEnnemies[c].hero;
+    				
+    				angular.forEach(json.data, function(value, key) {
+    					if (value.name === champName) {
+    						$scope.detailsEnnemies.push(value);
+    					}
+					});
+    			}
+    			console.log($scope.detailsEnnemies);
+    			$location.path("/fullResult");
+    	});
+    	
+    	console.log($scope.detailsEnnemies);
+    	$location.path("/fullResult");
+    }
 })
 
 .controller('aboutController', function($scope, $location, $sce) {
@@ -57,7 +80,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 
 .controller('parametersController', function($scope, $location, $sce) {
 	$scope.champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
-
+	
 	$scope.backToHome = function() {
     	$location.path("/welcome");
     }

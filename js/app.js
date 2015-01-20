@@ -25,6 +25,11 @@ var lolsmartpick = angular.module('lolsmartpick', ['ionic', 'ngRoute', 'ngTouch'
     templateUrl: 'templates/result.html',
     controller: 'resultController'
   });
+  
+  $routeProvider.when('/fullResult', {
+    templateUrl: 'templates/fullResult.html',
+    controller: 'resultController'
+  });
 
   $routeProvider.when('/pick', {
     templateUrl: 'templates/pickChamps.html',
