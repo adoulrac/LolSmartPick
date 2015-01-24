@@ -123,8 +123,8 @@ lolsmartpick.service('posteService', function() {
 });
 
 lolsmartpick.service('allChampService', function(posteService, $filter) {
-	var champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
-
+	var champs = list_champ;
+	
 	this.getChamps = function(){
 		return champs;
 	}

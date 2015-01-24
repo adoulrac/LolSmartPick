@@ -14,7 +14,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 })
 
 .controller('allChampsController', function($scope, $location, $routeParams, allChampService) {
-	$scope.champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
+	$scope.champs = list_champ;
 
 	$scope.selectChamp = function(champ) {
 		allChampService.selectChamp(champ, $routeParams.id);
@@ -49,7 +49,6 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 
 .controller('resultController', function($scope, $http, $location, $sce, posteService) {
 	$scope.pickedEnnemies = posteService.getEnnemies();
-	//$scope.detailsEnnemies = new Array();
 	
 	$scope.goToFullResult = function() {
     	$http.get('data/championFull.json')
