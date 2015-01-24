@@ -55,7 +55,7 @@ lolsmartpick.service('posteService', function() {
 	
 	getExcludes : function() {
 		excludesChamps = new Array();
-		storedChamps = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
+		var storedChamps = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
 		for(var i=0; i < storedChamps.length; i++){
 			if(storedChamps[i].exclude == "true") {
 				console.log("Exclude " + storedChamps[i].name);
