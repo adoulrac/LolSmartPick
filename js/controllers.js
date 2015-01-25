@@ -32,7 +32,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 
 .controller('assistanceController', function($scope, $location, $routeParams, allChampService, assistanceService, posteService) {
 	var idAlly = $routeParams.id;
-	$scope.champs = assistanceService.assistance();
+	$scope.champs = assistanceService.assistance($routeParams.id);
 	$scope.postes = posteService.getAlliesPoste();
 
 	$scope.backToPick = function() {
@@ -49,7 +49,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 	}
 	$scope.changePoste =function(){
 		posteService.changePosteAssistance($scope.selectedPoste, idAlly);
-		$scope.champs = assistanceService.assistance();
+		$scope.champs = assistanceService.assistance($routeParams.id);
 	}
 })
 
