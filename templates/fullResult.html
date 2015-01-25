@@ -1,0 +1,29 @@
+<ion-content>
+<div class="content" ng-controller="resultController">
+
+<ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide ng-repeat="detail in pickedEnnemies">
+  
+    <div class="box white">
+    	<div class="list card">
+  			<div class="item item-avatar">
+    			<img src="img/icons/{{detail.img}}" />
+    			<h2>{{detail.hero}}</h2>
+    			<p>{{detail.title}}</p>
+  			</div>
+
+  			<div class="item item-body">
+				<p style="text-align:justify;">Tags: {{detail.tags.join(", ")}}</p>
+				<h3>Ennemy tips</h3><p style="text-align:justify;">{{detail.enemytips.join(", ")}}</p>
+				<h3>Ally tips</h3><p style="text-align:justify;">{{detail.allytips.join(", ")}}</p>
+				<h3>Short Blurb</h3><p style="text-align:justify;">{{detail.blurb}}</p>
+  			</div>
+
+		</div>
+    </div>
+    
+  </ion-slide>
+</ion-slide-box>
+
+</div>
+</ion-content>

@@ -14,7 +14,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 })
 
 .controller('allChampsController', function($scope, $location, $routeParams, allChampService) {
-	$scope.champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
+	$scope.champs = list_champ;
 
 	$scope.selectChamp = function(champ) {
 		allChampService.selectChamp(champ, $routeParams.id);
@@ -53,8 +53,34 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 	}
 })
 
-.controller('resultController', function($scope, $location, $sce, posteService) {
+.controller('resultController', function($scope, $http, $location, $sce, posteService) {
 	$scope.pickedEnnemies = posteService.getEnnemies();
+	
+	$scope.goToFullResult = function() {
+    	$http.get('data/championFull.json')
+    		.then(function(res) {
+    			var json = angular.fromJson(res.data);
+    			
+    			for(var c in $scope.pickedEnnemies) {
+    				var champName = $scope.pickedEnnemies[c].hero;
+    				
+    				angular.forEach(json.data, function(value, key) {
+    					if (value.name === champName) {
+    						$scope.pickedEnnemies[c].title = value.title;
+    						$scope.pickedEnnemies[c].blurb = value.blurb;
+    						$scope.pickedEnnemies[c].allytips = value.allytips;
+    						$scope.pickedEnnemies[c].enemytips = value.enemytips;
+    						$scope.pickedEnnemies[c].tags = value.tags;
+    					}
+					});
+    			}
+    			//console.log($scope.detailsEnnemies);
+    			$location.path("/fullResult");
+    	});
+    	
+    	console.log($scope.detailsEnnemies);
+    	$location.path("/fullResult");
+    }
 })
 
 .controller('aboutController', function($scope, $location, $sce) {
@@ -63,7 +89,7 @@ lolsmartpick.controller('welcomeController', function($scope, $location, $sce, w
 
 .controller('parametersController', function($scope, $location, $sce) {
 	$scope.champs = window.localStorage['localChamps'] == null ? list_champ : JSON.parse(window.localStorage['localChamps']);
-
+	
 	$scope.backToHome = function() {
     	$location.path("/welcome");
     }
